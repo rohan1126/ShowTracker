@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search for TV shows</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h2>Navigation</h2>
+    <ul>
+        <li><a href="/">Search Anime</a></li>
+        <li><a href="/search_movie">Search Movie</a></li>
+        <li><a href="/search_tv">Search TV Show</a></li>
+        <li><a href="/search_character">Search Character</a></li>
+        <li><a href="/watchlist">View Watchlist</a></li>
+    </ul>
+    <h1>Search for Movies</h1>
+    <form method="POST">
+        <input type="text" name="tv_query" placeholder="Enter a movie title">
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>

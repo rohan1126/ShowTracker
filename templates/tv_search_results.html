@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Search Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h2>Navigation</h2>
+    <ul>
+        <li><a href="/">Search Anime</a></li>
+        <li><a href="/search_movie">Search Movie</a></li>
+        <li><a href="/search_tv">Search TV Show</a></li>
+        <li><a href="/search_character">Search Character</a></li>
+        <li><a href="/watchlist">View Watchlist</a></li>
+    </ul>
+    <h1>TV Search Results</h1>
+    <ul>
+        {% for result in results %}
+            <li>
+                <h2>{{ result.name }}</h2>
+                <p>{{ result.overview }}</p>
+                <p>Rating: {{ result.vote_average }}</p>
+                <img src="https://image.tmdb.org/t/p/w200{{ result.poster_path }}" alt="TV Poster">
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>

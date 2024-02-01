@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Info</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h2>Navigation</h2>
+    <ul>
+        <li><a href="/">Search Anime</a></li>
+        <li><a href="/search_movie">Search Movie</a></li>
+        <li><a href="/search_tv">Search TV Show</a></li>
+        <li><a href="/search_character">Search Character</a></li>
+        <li><a href="/watchlist">View Watchlist</a></li>
+    </ul>
+    <h1>Character Information</h1>
+    <ul>
+        <li>Name: {{ data['first_name'] }} {{ data['last_name'] }}</li>
+        <img src="{{ data['image'] }}" alt="Character Image" width="200" height="300">
+
+
+
+
+        <!-- Add more character information fields as needed -->
+    </ul>
+</body>
+</html>

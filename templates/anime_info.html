@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anime Information</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h2>Navigation</h2>
+    <ul>
+        <li><a href="/">Search Anime</a></li>
+        <li><a href="/search_movie">Search Movie</a></li>
+        <li><a href="/search_tv">Search TV Show</a></li>
+        <li><a href="/search_character">Search Character</a></li>
+        <li><a href="/watchlist">View Watchlist</a></li>
+    </ul>
+    <h1>Anime Information</h1>
+
+    <p><strong>Name:</strong> {{ data['name_english'] }}</p>
+    <p><strong>Starting Time:</strong> {{ data['starting_time'] }}</p>
+    <p><strong>Ending Time:</strong> {{ data['ending_time'] }}</p>
+    <p><strong>Episodes:</strong> {{ data['airing_episodes'] }}</p>
+    <p><strong>Rating:</strong> {{ data['average_score'] }}/100</p>
+
+
+    <p><strong>Description:</strong> {{ data['desc'] }}</p>
+
+    <img src="{{ data['cover_image'] }}" alt="Character Image" width="200" height="300">
+  <br>
+
+
+    <a href="{{ url_for('watchlist.add_watchlist', show_name=data['name_english']) }}">Add to Watchlist</a>
+
+
+
+    <!-- Add a button to return to the home screen -->
+    <a href="{{ url_for('anime.search_anime') }}">Back to Home</a>
+</body>
+</html>
